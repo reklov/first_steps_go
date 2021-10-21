@@ -48,10 +48,8 @@ Do not forget to use this fonts in your coding editor and in iterm
 ## Powerlevel10k - Terminal Enanchment
 
 ```bash
-brew install
+brew install brew install romkatv/powerlevel10k/powerlevel10k
 ```
-
-`l romkatv/powerlevel10k/powerlevel10k`
 
 Adding this to your zsh config
 
