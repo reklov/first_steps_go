@@ -14,7 +14,7 @@ Visit: https://macromates.com/
 
 One important part after the installation is to enable the _Shell Support_
 
-Inside textmate Go to _Preferences_ -> _Terminal_ -> Choose _Install Shell Support_
+    Inside textmate Go to _Preferences_ -> _Terminal_ -> Choose _Install Shell Support_
 
 ## iTerm2 - Terminal App
 
@@ -26,7 +26,7 @@ Visit: https://iterm2.com/
 
 The Missing Package Manager for macOS (or Linux)
 
-https://brew.sh/
+Visit: https://brew.sh/
 
 ## ssh key
 
@@ -53,7 +53,9 @@ brew install brew install romkatv/powerlevel10k/powerlevel10k
 
 Adding this to your zsh config
 
-`echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc`
+```bash
+echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+```
 
 Starting the configuration
 
@@ -63,7 +65,9 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 Reconfigure your p10k installation
 
-`p10k configure`
+```bash
+p10k configure
+```
 
 Visit: https://github.com/romkatv/powerlevel10k for more information
 
@@ -71,11 +75,15 @@ Visit: https://github.com/romkatv/powerlevel10k for more information
 
 ### Golang
 
-`brew install go`
+```bash
+brew install go
+```
 
 simple test for your go installation:
 
-`go version`
+```bash
+go version
+```
 
 Visit: https://golang.org/doc/tutorial/getting-started for a more detailed test.
 
@@ -99,7 +107,9 @@ The world’s fastest framework for building websites
 
 https://gohugo.io/
 
-`brew install hugo`
+```bash
+brew install hugo
+```
 
  https://gohugo.io/getting-started/installing
 
@@ -115,4 +125,6 @@ https://cloud.google.com/sdk
 
 test your installation:
 
-`gcloud auth login`
+```bash
+gcloud auth login
+```
