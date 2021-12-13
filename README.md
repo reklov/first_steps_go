@@ -129,6 +129,8 @@ from [Wikipedia](https://en.wikipedia.org/wiki/Markdown)
 
 Using a markup language instead of MS Word or others has the clear benefit, that you can use a version control system like ==Git==
 
+Visit https://www.markdownguide.org/basic-syntax/ for short introduction insto the syntax.
+
 ## Typora - Markdown Text editor
 
 Also Visual Studio code has some cabapilities to edit and preview Markdown files. There is a better alternative. It is not for free, but worth the money. 
