@@ -1,79 +1,110 @@
-My steps to setup my Mac with OSX to get productive. Writing docs withto programm with go and Google Cloud plattform
-
-Tested on: OSX Big Sour
-
-
-
 # First steps to _GO_ productive
 
-## Textmate - Text editor
+My steps to setup my Mac with OSX to get productive. Writing docs to programm with Golang and Google Cloud plattform. Programming with Windows 10 is certainly also possible and I tried a lot of stuff and used Windows 10 with ther terminal app and WSL2. But for short: OSX is much more comfortable and faster. So if you have the possiblity to use osx, then do it.
 
-Powerful and customizable text editor with support for a huge list of programming languages and developed as open source.
+I noted here all steps I do to setup a plain OSX as my developer environment.
 
-Visit: https://macromates.com/
+Tested on mac OS: ==Big Sour== ==Monterey==
 
-One important part after the installation is to enable the _Shell Support_
+# Homebrew - Package Manager
 
-    Inside textmate Go to _Preferences_ -> _Terminal_ -> Choose _Install Shell Support_
+First we will need to install [Homebrew](https://brew.sh/). Homebrew is the Missing Package Manager for macOS (or Linux), that installs the packages that Apple didn´t. We will use brew to install some stuff with much less effort compared to doing everything manually.
 
-## iTerm2 - Terminal App
+Open your ==Terminal== and copy the text below:
 
-iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS 10.14 or newer. iTerm2 brings the terminal into the modern age with features you never knew you always wanted.
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-Visit: https://iterm2.com/
+Visit https://brew.sh/ to learn more about it!
 
-## Homebrew - Package Manager
+## Update Homebrew
 
-The Missing Package Manager for macOS (or Linux)
+After you installed Homebrew you can and certainly should open your ==Terminal==  and update brew from time to time with 
 
-Visit: https://brew.sh/
+```bash
+brew update
+```
 
-## ssh key
+after running that command it shows you all outdated installed packages.
+to update all and everything just type
 
-https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+```bash
+brew upgrade
+```
 
-// Adding SSH Key
-// Azure DevOps
-// Github
+# iTerm2 - Terminal App
 
-## Special Fonts
+Using the terminal is one of the biggest productivity boosts you can gain in your daily work as a developer. You will be way faster than using the UI and the mouse.
+But there is one problem, the standard ==Terminal.app==  provided by Apple is quite basic. So we will replace it with [iTerm2](https://iterm2.com/) to have a modern, feature blown terminal on our hands. After installing iTerm2, everytime when I talk about terminal in this script about I always mean iTerm2 or in short iTerm.
+Installing iTerm2 ist easy, we simply use.
 
-we use some special fonts, that make Code much more readable.
+Open your ==Terminal== and copy the text below:
 
-Visit:  https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
-Visit:  https://www.jetbrains.com/lp/mono/
+```bash
+brew install --cask iterm2
+```
 
-Do not forget to use this fonts in your coding editor and in iterm
+Visit: https://iterm2.com/ to learn more about it!
 
-## Powerlevel10k - Terminal Enanchment
+# Powerlevel10k - Terminal Enanchment
+
+Powerlevel10k is a theme for Zsh. It give you all neccessarz infomation, that you will need while working with the terminal. So it will save you time. In example it informs you on the current git state or the branch you are working on. 
+
+Visit: https://github.com/romkatv/powerlevel10k for more information
+
+## Install
+
+Copy this comands to you ==Terminal== (And now we are using ==iTerm==)
 
 ```bash
 brew install romkatv/powerlevel10k/powerlevel10k
-```
-
-Adding this to your zsh config
-
-```bash
 echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+source ~/.zshrc
 ```
 
-Starting the configuration
+##Reconfigure p10k
 
-```bash
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-```
-
-Reconfigure your p10k installation
+While you are configuring powerlevel10k you will asked a lot of questions. And it is very likely, that you want to change some of your settings later. 
+To do so just type this command on your ==Terminal== 
 
 ```bash
 p10k configure
 ```
 
-Visit: https://github.com/romkatv/powerlevel10k for more information
+# VS Code
 
-## Programming languages
+[Visual Studio Code]( https://code.visualstudio.com/) from Microsoft is a very resource-efficient editor. It is a good starting point and help you also to edit resource files. If you later do some more heavy development stuff I highly recommend to have a look at the tools from [Jetbrains](https://www.jetbrains.com)
 
-### Golang
+Visit: https://code.visualstudio.com/ for more information
+
+To install Visual Studio Code we simply can use brew. Just type this into yout terminal.
+
+```
+ brew install --cask visual-studio-code
+```
+
+## Launching from the command line
+
+Working at the terminal make s you much faster. But often you simply want to edit a file, without then using the UI and navigate to the folder, where you already are at the terminal. What could be better, than starting the editor right from the place, whre you are at the terminal. To do so you need to follow these steps: https://code.visualstudio.com/docs/setup/mac
+
+After this you are able to open Visual Studio Code right from the terminal like this.
+
+```
+code .
+```
+
+This will open the entire directory inside your editor.
+
+```
+code some.txt
+```
+
+will open the file _some.txt_ in your editor.
+
+# Programming languages
+
+## Golang
 
 ```bash
 brew install go
@@ -85,46 +116,39 @@ simple test for your go installation:
 go version
 ```
 
-Visit: https://golang.org/doc/tutorial/getting-started for a more detailed test.
+where to put your go files?
 
-## VS Code // Golang Jetbrains
+Visit: https://golang.org/doc/tutorial/getting-started for a more detailed test and a good starting point with the golang language.
 
-Choose one or both
 
-Visit: https://code.visualstudio.com/
+# Markdown
 
-Visit: https://www.jetbrains.com/go/
+> **Markdown** is a [lightweight markup language](https://en.wikipedia.org/wiki/Lightweight_markup_language) for creating [formatted text](https://en.wikipedia.org/wiki/Formatted_text) using a [plain-text editor](https://en.wikipedia.org/wiki/Text_editor). [John Gruber](https://en.wikipedia.org/wiki/John_Gruber) and [Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz) created Markdown in 2004 as a [markup language](https://en.wikipedia.org/wiki/Markup_language) that is appealing to human readers in its source code form.[[9\]](https://en.wikipedia.org/wiki/Markdown#cite_note-philosophy-9) Markdown is widely used in [blogging](https://en.wikipedia.org/wiki/Blog), [instant messaging](https://en.wikipedia.org/wiki/Instant_messaging), [online forums](https://en.wikipedia.org/wiki/Online_forums), [collaborative software](https://en.wikipedia.org/wiki/Collaborative_software), [documentation](https://en.wikipedia.org/wiki/Documentation) pages, and [readme files](https://en.wikipedia.org/wiki/README).
+
+from [Wikipedia](https://en.wikipedia.org/wiki/Markdown)
+
+Using a markup language instead of MS Word or others has the clear benefit, that you can use a version control system like ==Git==
 
 ## Typora - Markdown Text editor
 
-Minimal Markdown Editor
+Also Visual Studio code has some cabapilities to edit and preview Markdown files. There is a better alternative. It is not for free, but worth the money. 
 
 Visit: https://typora.io/
 
 ## hugo - Static site generator
 
-The world’s fastest framework for building websites
+The world’s fastest framework for building websites.
 
 https://gohugo.io/
 
-```bash
-brew install hugo
-```
+`brew install hugo`
 
  https://gohugo.io/getting-started/installing
 
-## Chrome extension
+# Google SDK
 
-Some useful extensions
+To develop with the Google Cloud Plattform (GCP) you will need the GCP SDK. 
 
-- JSON Formatter
+Visit: https://cloud.google.com/sdk/docs/install to download the necessary files.
 
-## Google SDK
 
-https://cloud.google.com/sdk
-
-test your installation:
-
-```bash
-gcloud auth login
-```
